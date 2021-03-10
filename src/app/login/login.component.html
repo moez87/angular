@@ -1,0 +1,14 @@
+<!-- <input type="email" name="" id="">
+<input type="password">
+<button class="btn-primary">Submit</button> -->
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="email" matInput [formControl]="email" placeholder="">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
