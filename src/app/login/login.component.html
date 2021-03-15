@@ -1,14 +1,20 @@
-<!-- <input type="email" name="" id="">
-<input type="password">
-<button class="btn-primary">Submit</button> -->
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input type="email" matInput [formControl]="email" placeholder="">
-      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-        Please enter a valid email address
-      </mat-error>
-      <mat-error *ngIf="email.hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-  </form>
+<div class="row">
+    <div class="offset-3 col-6">
+      <form [formGroup]="loginForm"(ngSubmit)="login()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Type your email address" aria-describedby="emailHelp"formControlName="email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control"placeholder="Type your passoword"  id="exampleInputPassword1"formControlName="Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label"  for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form> 
+   </div>
+</div>
