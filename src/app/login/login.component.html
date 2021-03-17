@@ -3,18 +3,31 @@
       <form [formGroup]="loginForm"(ngSubmit)="login()">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Type your email address" aria-describedby="emailHelp"formControlName="email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Type your email address" aria-describedby="emailHelp"formControlName="email"[ngClass]="{'is-invalid': submitted && loginForm.controls.email.errors, 'is-valid': submitted && !loginForm.controls.email.errors}">
+          <div class="invalid-feedback d-block"
+                    *ngIf="submitted && loginForm.controls.email.hasError('required')">
+                    email is required.
+                </div>
+                <div class="invalid-feedback d-block"
+                *ngIf="submitted && loginForm.controls.email.hasError('email')">
+             Email is invalid format.
+            </div>
+                
+                
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control"placeholder="Type your passoword"  id="exampleInputPassword1"formControlName="Password">
+          <input type="password" class="form-control"placeholder="Type your passoword"  id="exampleInputPassword1"formControlName="Password"[ngClass]="{'is-invalid': submitted && loginForm.controls.Password.errors, 'is-valid': submitted && !loginForm.controls.Password.errors}">
+          <div class="invalid-feedback d-block"
+          *ngIf="submitted && loginForm.controls.Password.hasError('required')">
+          Password is required.
+      </div>
+      <div class="invalid-feedback d-block"
+                *ngIf="submitted && loginForm.controls.Password.hasError('minlength')">
+                passoword is required minimum 8 char.
+            </div>
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label"  for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">login</button>
       </form> 
    </div>
 </div>

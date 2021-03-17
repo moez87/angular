@@ -13,10 +13,10 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({
     FirstName: new FormControl('',[Validators.required]),
     LastName: new FormControl('',[Validators.required]),
-    email: new FormControl('',[Validators.required]),
-    emailConfirmation: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    emailConfirmation: new FormControl('',[Validators.required, Validators.email]),
     Password: new FormControl('',[Validators.required,Validators.minLength(8)]),
-    PasswordConfirmation: new FormControl('',[Validators.required]),
+    PasswordConfirmation: new FormControl('',[Validators.required,Validators.minLength(8)]),
   });
   constructor(private router :Router) { }
 
@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
     users.push(this.registerForm.value);
     localStorage.setItem('users',JSON.stringify(users));
     this.registerForm.reset();
-    this.router.navigateByUrl('/app-add-to-do')
+    this.router.navigateByUrl('/login')
 
     
   }

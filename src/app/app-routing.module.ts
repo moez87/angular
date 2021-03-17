@@ -8,23 +8,32 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
-    path: '' ,
+    path: '',
     redirectTo: '/login',
     pathMatch: 'full'
   },
-  
-{
-  path: 'login',
-  component: LoginComponent
-},
-{
-  path: 'register',
-  component: RegisterComponent
-},
-{path:"app-list-to-do",component:ListToDOComponent},
-{path:"app-add-to-do",component:AddToDoComponent},
 
-{path:"**",component:Page404Component}
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: "list-todo",
+    component: ListToDOComponent
+  },
+  {
+    path: "add-todo",
+    component: AddToDoComponent
+  },
+
+  {
+    path: "**",
+    component: Page404Component
+  }
 
 ];
 

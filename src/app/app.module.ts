@@ -14,6 +14,7 @@ import { Page404Component } from './page404/page404.component';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import { ListToDOComponent } from './list-to-do/list-to-do.component';
 import { UpdateToDOComponent } from './update-to-do/update-to-do.component';
+import { AddSkillsComponent } from './add-skills/add-skills.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdateToDOComponent } from './update-to-do/update-to-do.component';
     Page404Component,
     AddToDoComponent,
     ListToDOComponent,
-    UpdateToDOComponent
+    UpdateToDOComponent,
+    AddSkillsComponent
   ],
   imports: [
     BrowserModule,

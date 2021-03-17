@@ -11,5 +11,5 @@ export class UpdateToDOComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+update() {}
 }
