@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="offset-3 col-6 mt-5">
+        <form [formGroup]="AddSkillsForm" (ngSubmit)="saveUser()">
+            <div class="form-group">
+                <label for="FirstName">First name</label>
+                <input type="text" class="form-control" id="FirstName" placeholder="Type your First Name here"
+                    formControlName="FirstName"
+                    [ngClass]="{'is-invalid': submitted && AddSkillsForm.controls.FirstName.errors, 'is-valid': submitted && !AddSkillsForm.controls.FirstName.errors}">
+                <div class="invalid-feedback d-block"
+                    *ngIf="submitted && AddSkillsForm.controls.FirstName.hasError('required')">
+                    The first name is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Last name">Last name</label>
+                <input type="text" class="form-control" id="last name" placeholder="Type your last Name"
+                    formControlName="LastName"
+                    [ngClass]="{'is-invalid': submitted && AddSkillsForm.controls.LastName.errors, 'is-valid': submitted && !AddSkillsForm.controls.LastName.errors}">
+                <div class="invalid-feedback d-block"
+                    *ngIf="submitted && AddSkillsForm.controls.LastName.hasError('required')">
+                    The last name is required.
+                </div>
+            </div>
+            <div formArrayName="skills">
+
+                <div class="d-grid gap-2 d-md-flex ">
+                    <h3> skills:</h3>
+                    <button class="btn btn-success me-md-2 ml-2" (click)="addSkills()" type="button"><i
+                            class="fas fa-plus"></i> Add row</button>
+                    <button class="btn btn-danger ml-3" (click)="removeLastskills()" type="button"><i
+                            class="fas fa-trash"></i> Remove last row</button>
+                    <button class="btn btn-danger ml-3" (click)="removeallskills()" type="button"><i
+                            class="fas fa-trash"></i> Remove all row</button>
+                </div>
+                <div *ngFor="let group of getskills.controls;let i=index">
+                    <div class="row" [formGroupName]="i">
+                        <div class="form-group col-5 mt-3">
+                            <input type="text" class="form-control" formControlName="skill"
+                                placeholder="Type your skills here">
+                        </div>
+                        <div class="form-group col-5  mt-3">
+                            <input type="text" class="form-control" formControlName="rating"
+                                placeholder="Type your rating here">
+                        </div>
+                        <div class="col-2 mt-3">
+                            <button class="btn btn-danger " (click)="removeskills(i)" type="button "><i
+                                    class="fas fa-trash"></i> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-2"> <i class="far fa-save"></i> Save user</button>
+            <!-- <button type="submit" class="btn btn-primary">-</button> -->
+        </form>
+    </div>
+</div>

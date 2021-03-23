@@ -15,6 +15,9 @@ import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import { ListToDOComponent } from './list-to-do/list-to-do.component';
 import { UpdateToDOComponent } from './update-to-do/update-to-do.component';
 import { AddSkillsComponent } from './add-skills/add-skills.component';
+import { crudComponent } from './crud/crud.component';
+import { CrudListComponent } from './crud-list/crud-list.component';
+import { CrudUpdateComponent } from './crud-update/crud-update.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { AddSkillsComponent } from './add-skills/add-skills.component';
     AddToDoComponent,
     ListToDOComponent,
     UpdateToDOComponent,
-    AddSkillsComponent
+    AddSkillsComponent,
+    crudComponent,
+    CrudListComponent,
+    CrudUpdateComponent
   ],
   imports: [
     BrowserModule,

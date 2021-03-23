@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="offset-3 col-6">
+        <form [formGroup]="crudForm" (ngSubmit)="AddCrud()">
+            <div class="form-group">
+                <label for="productName"> Product Name :</label>
+                <input type="text" class="form-control" id="name" placeholder="Type Product Name here"
+                    formControlName="productName"
+                    [ngClass]="{'is-invalid': submitted && crudForm.controls.productName.errors, 'is-valid': submitted && !crudForm.controls.productName.errors}">
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && crudForm.controls.productName.hasError('required')">Product Name is
+                        required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Product Description :</label>
+                <textarea class="form-control" row="40" id="productDescription"
+                    placeholder="Type your Product description here" formControlName="productDescription"
+                    [ngClass]="{'is-invalid': submitted && crudForm.controls.productDescription.errors, 'is-valid': submitted && !crudForm.controls.productDescription.errors}"></textarea>
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && crudForm.controls.productDescription.hasError('required')">Product
+                        Description is required.</div>
+                    <div *ngIf="submitted && crudForm.controls.productDescription.hasError('minlength')">Product
+                        Description is invalid format > 8.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <textarea class="form-control" id="Quantity" placeholder="Type your Quantity here"
+                    formControlName="quantity"
+                    [ngClass]="{'is-invalid': submitted && crudForm.controls.quantity.errors, 'is-valid': submitted && !crudForm.controls.quantity.errors}"></textarea>
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && crudForm.controls.quantity.hasError('required')">Quantity is required.
+                    </div>
+                    <div *ngIf="submitted && crudForm.controls.quantity.hasError('minlength')">Quantity is invalid
+                        format > 8.</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Product</button>
+            <button type="submit" class="btn btn-danger btn-block"routerLink="/crud-list">Cancel</button>
+        </form>
+    </div>
+</div>

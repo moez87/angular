@@ -1,6 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddSkillsComponent } from './add-skills/add-skills.component';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
+import { CrudListComponent } from './crud-list/crud-list.component';
+import { CrudUpdateComponent,  } from './crud-update/crud-update.component';
+import { crudComponent } from './crud/crud.component';
 import { ListToDOComponent } from './list-to-do/list-to-do.component';
 import { LoginComponent } from './login/login.component';
 import { Page404Component } from './page404/page404.component';
@@ -29,6 +33,22 @@ const routes: Routes = [
     path: "add-todo",
     component: AddToDoComponent
   },
+  {
+    path: "add-skills",
+    component: AddSkillsComponent
+  },
+  {
+    path: "crud",
+    component: crudComponent
+  },
+  {
+   path: "crud-list",
+    component: CrudListComponent
+  },
+  {
+    path: "crud-update/:i",
+    component:CrudUpdateComponent
+   },
 
   {
     path: "**",
