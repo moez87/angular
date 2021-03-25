@@ -53,9 +53,11 @@ export class CrudUpdateComponent implements OnInit {
       return ;
     }
 
-    let cruds = JSON.parse(localStorage.getItem('crud') || '[]');
-    cruds.splice(this.index, 1, this.updateCrudForm.value);
-    localStorage.setItem('crud', JSON.stringify(cruds));
+    // let cruds = JSON.parse(localStorage.getItem('crud') || '[]');
+    // cruds.splice(this.index, 1, this.updateCrudForm.value);
+    // localStorage.setItem('crud', JSON.stringify(cruds));
+    let updateProductData=this.updateCrudForm.value;
+    this.productService.updateProductDataByIndex(updateProductData,this.index);
 
     // vider form 
     this.updateCrudForm.reset();

@@ -27,7 +27,9 @@ export class ProductService {
   }
   // Update product by index (used in update-product compounents)
   updateProductDataByIndex(updateProductData, index) {
-
+    let cruds = JSON.parse(localStorage.getItem('crud') || '[]');
+    cruds.splice(index, 1,updateProductData);
+    localStorage.setItem('crud', JSON.stringify(cruds));
   }
   DeleteProductById(i) {
     let products = JSON.parse(localStorage.getItem('crud') || '[]');
