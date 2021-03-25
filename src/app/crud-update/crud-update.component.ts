@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-crud-update',
@@ -17,7 +18,7 @@ export class CrudUpdateComponent implements OnInit {
     productDescription: new FormControl('',[Validators.required]),
     quantity: new FormControl('',[Validators.required]),
   });
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,private productService:ProductService ) { }
 
   ngOnInit(): void {
     // fist way
@@ -36,9 +37,10 @@ export class CrudUpdateComponent implements OnInit {
 
   loadCrud()
   {
-    let cruds = JSON.parse(localStorage.getItem('crud') || '[]');
-    let todoData = cruds[this.index];
-    this.updateCrudForm.patchValue(todoData);
+    // let cruds = JSON.parse(localStorage.getItem('crud') || '[]');
+    // let todoData = cruds[this.index];
+    let productData = this.productService.getProductByindex(this.index) ;
+    this.updateCrudForm.patchValue(productData);
 
     
   }

@@ -1,7 +1,13 @@
 <div class="row mt-5">
   <div class="offset-1 col-9">
-    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-    <button class="btn btn-primary float-right my-2" routerLink="/crud">Add crud</button>
+    <div class="row col-6">
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search product..." [(ngModel)]="searchText">
+      </div>
+      <div class=" float-right">
+        
+    <button class="btn btn-primary float-right my-2" routerLink="/crud"><i class="fas fa-plus"></i> Add Product</button>
+      </div>
+    
   </div>
   <div class="offset-1 col-9">
     <table class="table table-striped table-hover">
@@ -15,17 +21,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of crud; let i=index">
+        <tr *ngFor="let product of crud | search: searchText; let i=index">
           <th scope="row">{{ i+1 }}</th>
-          <td>{{ product.productName }}</td>
-          <td>{{ product.productDescription }}</td>
-          <td>{{ product.quantity }}</td>
+          <td>{{ product.productName | uppercase }}</td>
+          <td>{{ product.productDescription | lowercase  | slice:0:3}}</td>
+          <td>{{ product.quantity | credit }}</td>
           <td>
-            <button class="btn btn-info" [routerLink]="[ '/crud-update', i ]">Update</button>
-            <button class="btn btn-danger ml-1" (click)="deleteTask(i)">Delete</button>
+            <button class="btn btn-info" [routerLink]="[ '/crud-update', i ]"> <i class="fas fa-pen"></i> Update</button>
+            <button class="btn btn-danger ml-1" (click)="deleteTask(i)"> <i class="far fa-trash-alt"></i> Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <p>{{ currentDate | date:'fullDate' }}</p>
   </div>
 </div>

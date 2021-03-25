@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,6 +18,11 @@ import { AddSkillsComponent } from './add-skills/add-skills.component';
 import { crudComponent } from './crud/crud.component';
 import { CrudListComponent } from './crud-list/crud-list.component';
 import { CrudUpdateComponent } from './crud-update/crud-update.component';
+import { CreditPipe } from './pipes/credit.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { Crud2Component } from './crud2/crud2.component';
+import { Crud2ListComponent } from './crud2-list/crud2-list.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { CrudUpdateComponent } from './crud-update/crud-update.component';
     AddSkillsComponent,
     crudComponent,
     CrudListComponent,
-    CrudUpdateComponent
+    CrudUpdateComponent,
+    CreditPipe,
+    SearchPipe,
+    Crud2Component,
+    Crud2ListComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -41,7 +51,7 @@ import { CrudUpdateComponent } from './crud-update/crud-update.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

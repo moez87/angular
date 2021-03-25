@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="offset-3 col-6">
+        <form [formGroup]="crud2Form" (ngSubmit)=" AddCrud2()">
+            <div class="form-group">
+                <label for="name">  Name :</label>
+                <input type="text" class="form-control" id="name" placeholder="Type Product Name here"
+                    formControlName="name"
+                    [ngClass]="{'is-invalid': submitted && crud2Form.controls.name.errors, 'is-valid': submitted && !crud2Form.controls.name.errors}">
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && crud2Form.controls.name.hasError('required')">Name is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description"> Description :</label>
+                <textarea class="form-control" row="40" id="description"
+                    placeholder="Type your Product description here" formControlName="description"
+                    [ngClass]="{'is-invalid': submitted && crud2Form.controls.description.errors, 'is-valid': submitted && !crud2Form.controls.description.errors}"></textarea>
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && crud2Form.controls.description.hasError('required')">
+                        Description is required.</div>
+                    <div *ngIf="submitted && crud2Form.controls.description.hasError('minlength')">
+                        Description is invalid format > 8.</div>
+                </div>
+            </div>
+          
+            <button type="submit" class="btn btn-primary btn-block">Add </button>
+            <button type="submit" class="btn btn-danger btn-block"routerLink="/crud2-list">Cancel</button>
+        </form>
+    </div>
+</div>
