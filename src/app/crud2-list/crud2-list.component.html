@@ -22,13 +22,13 @@
       <tbody>
         <tr *ngFor="let product of crud2; let i=index">
           <th scope="row">{{ i+1 }}</th>
-          <td>{{ product.productName}}</td>
-          <td>{{ product.productDescription}}</td>
+          <td>{{ product.name}}</td>
+          <td>{{ product.description}}</td>
 
           <td>
-            <button class="btn btn-info" [routerLink]="[ '/crud2-update', i ]"> <i class="fas fa-pen"></i>
+            <button class="btn btn-info" (click)="UpdateCrud(i)"> <i class="fas fa-pen"></i>
               Update</button>
-            <button class="btn btn-danger ml-1" (click)="deleteTask(i)"> <i class="far fa-trash-alt"></i>
+            <button class="btn btn-danger ml-1" (click)="deleteUpdatedCrud(i)"> <i class="far fa-trash-alt"></i>
               Delete</button>
           </td>
         </tr>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-crud2-list',
@@ -6,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crud2-list.component.css']
 })
 export class Crud2ListComponent implements OnInit {
+ 
 
-  crud2:any;
-  searchText:any;
+  @Input() crud2:any;
+  @Output() updateEvent = new EventEmitter<number>();
+  @Output() deleteEvent = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  UpdateCrud(i){
+    this.updateEvent.emit(i)
+  }
+
+  deleteUpdatedCrud(i){
+  this.deleteEvent.emit(i)
+  }
 }

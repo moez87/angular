@@ -23,10 +23,10 @@
                 </div>
             </div>
           
-            <button type="submit" class="btn btn-primary btn-block">Add </button>
-            <!-- <button type="submit" class="btn btn-danger btn-block"routerLink="/crud2-list">Cancel</button> -->
+            <button *ngIf="! showUpdateButtom" type="submit" class="btn btn-primary btn-block">Save User</button>
+            <button *ngIf="showUpdateButtom" type="button" class="btn btn-danger btn-block" (click)=" saveUpdate()" >Save Update</button>
         </form>
     </div>
 </div>
 
-<app-crud2-list></app-crud2-list>
+<app-crud2-list [crud2]="cruds" (updateEvent)="showUserData($event)" (deleteEvent)= "DeleteUpdatedCrud($event)"></app-crud2-list>
