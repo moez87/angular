@@ -56,13 +56,6 @@ const routes: Routes = [
     component: Crud2Component
   },
   {
-    path: "crud2-list",
-    component: Crud2ListComponent
-  },
- 
-
-
-  {
     path: "**",
     component: Page404Component
   }

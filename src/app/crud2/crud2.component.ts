@@ -11,8 +11,8 @@ export class Crud2Component implements OnInit {
   submitted= false ;
      crud2Form: FormGroup = new FormGroup({
       id: new FormControl(''),
-     Name: new FormControl('',[Validators.required]),
-     Description: new FormControl('',[Validators.required]),
+     name: new FormControl('',[Validators.required]),
+     description: new FormControl('',[Validators.required]),
       
     });
 
