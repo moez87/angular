@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
@@ -22,6 +20,7 @@ import { CreditPipe } from './pipes/credit.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { Crud2Component } from './crud2/crud2.component';
 import { Crud2ListComponent } from './crud2-list/crud2-list.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -49,9 +48,7 @@ import { Crud2ListComponent } from './crud2-list/crud2-list.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    FormsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

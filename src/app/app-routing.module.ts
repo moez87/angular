@@ -55,6 +55,7 @@ const routes: Routes = [
     path: "crud2",
     component: Crud2Component
   },
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   {
     path: "**",
     component: Page404Component
