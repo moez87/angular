@@ -21,6 +21,13 @@ import { SearchPipe } from './pipes/search.pipe';
 import { Crud2Component } from './crud2/crud2.component';
 import { Crud2ListComponent } from './crud2-list/crud2-list.component';
 import { SharedModule } from './shared/shared.module';
+import { Product2Component } from './product2/product2.component';
+import { AddProduct2Component } from './add-product2/add-product2.component';
+import { UpdateProduct2Component } from './update-product2/update-product2.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 @NgModule({
@@ -42,6 +49,9 @@ import { SharedModule } from './shared/shared.module';
     SearchPipe,
     Crud2Component,
     Crud2ListComponent,
+    Product2Component,
+    AddProduct2Component,
+    UpdateProduct2Component,
  
   ],
   imports: [
@@ -49,6 +59,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
