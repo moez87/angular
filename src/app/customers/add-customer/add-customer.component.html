@@ -1,1 +1,45 @@
-<p>add-customer works!</p>
+<div class="row mt-5 ">
+    <div class="offset-4 col-lg-4 center-block">
+        <form [formGroup]="product2Form" (ngSubmit)="SaveProduct()" class="form-group ">
+            <mat-form-field class="example-full-width">
+                <mat-label for="product2Name"> Name</mat-label>
+                <input type="text" matInput formControlName="product2Name"
+                       placeholder="type product name">
+                <mat-error *ngIf="product2Form.controls.product2Name.hasError('required')">
+                  Please enter a valid product Name
+                </mat-error>
+              </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="product2Description" placeholder="Description"></textarea>
+                <mat-error *ngIf="product2Form.controls.product2Description.hasError('required')">
+                  Please enter a valid Description
+                </mat-error>
+            </mat-form-field>
+           
+            <mat-form-field>
+                <input matInput formControlName="price" placeholder="Amount" type="number" class="example-right-align">
+                <span matPrefix>$&nbsp;</span>
+                <span matSuffix>.00</span>
+                <mat-error *ngIf="product2Form.controls.price.hasError('required')">
+                  Please enter a valid price
+                </mat-error>
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                <input matInput formControlName="quantity" placeholder="Type your Quantity" >
+                <mat-error *ngIf="product2Form.controls.quantity.hasError('required')">
+                  Please enter a valid quantity
+                </mat-error>
+            </mat-form-field>
+            
+            <button mat-button color="primary" type="submit">Add Product</button>
+             
+            
+        </form>
+
+    </div>
+
+
+
+</div>

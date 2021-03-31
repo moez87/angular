@@ -9,7 +9,6 @@ import { Crud2Component } from './crud2/crud2.component';
 import { ListToDOComponent } from './list-to-do/list-to-do.component';
 import { LoginComponent } from './login/login.component';
 import { Page404Component } from './page404/page404.component';
-import { Product2Component } from './product2/product2.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -55,10 +54,7 @@ const routes: Routes = [
     path: "crud2",
     component: Crud2Component
   },
-  {
-    path: "product2",
-    component: Product2Component
-  },
+ 
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   {
     path: "**",
