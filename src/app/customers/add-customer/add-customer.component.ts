@@ -21,7 +21,7 @@ export class AddCustomerComponent implements OnInit {
   }
 
   
-  UpdateProduct(){
+  SaveProduct(){
 
 
   }
