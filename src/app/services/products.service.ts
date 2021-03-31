@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,17 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  addProduct(productData:any){
+      return this.http.post("http://localhost:3000/products", productData);
+  }
+
+  getAllProduct(){}
+
+  getPProductById(id:any){}
+
+  updateProductById(id:any,productData:any){}
+
+  deleteProductById(id:any){}
 }

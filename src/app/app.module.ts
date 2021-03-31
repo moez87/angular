@@ -24,6 +24,8 @@ import { SharedModule } from './shared/shared.module';
 import { AddProduct2Component } from './add-product2/add-product2.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -57,6 +59,7 @@ import {MatButtonModule} from '@angular/material/button';
     SharedModule,
     MatInputModule,
     MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
