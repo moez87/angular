@@ -7,23 +7,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  submitted = false;
-  product2Form: FormGroup = new FormGroup({
-    id: new FormControl(''),
-    product2Name: new FormControl('', [Validators.required]),
-    product2Description: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required]),
-    quantity: new FormControl('', [Validators.required]),
-  });
+
+  products:any;
 
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-  UpdateProduct(){
-
-
   }
 
 }
