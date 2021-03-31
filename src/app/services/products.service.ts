@@ -12,11 +12,19 @@ export class ProductsService {
       return this.http.post("http://localhost:3000/products", productData);
   }
 
-  getAllProduct(){}
+  getAllProduct(){
+    return this.http.get("http://localhost:3000/products");
+  }
 
-  getPProductById(id:any){}
+  getPProductById(id:any){
+    return this.http.get("http://localhost:3000/products/"+ id );
+  }
 
-  updateProductById(id:any,productData:any){}
+  updateProductById(id:any,productData:any){
+    return this.http.put("http://localhost:3000/products/"+ id , productData);
+  }
 
-  deleteProductById(id:any){}
+  deleteProductById(id:any){
+    return this.http.delete("http://localhost:3000/products/" + id);
+  }
 }
