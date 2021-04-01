@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-customers',
@@ -8,12 +8,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CustomersComponent implements OnInit {
 
-  products:any;
+  products: any;
 
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getAllProduct().subscribe((response) => {
+       this.products=response;
+    },
+      (error) => {
+        console.log(error);
+      });
   }
-
 }
