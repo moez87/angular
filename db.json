@@ -1,20 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "product2Name": "aaaa",
-      "product2Description": "abc",
-      "price": 10,
-      "quantity": "30"
-    },
-    {
-      "id": 2,
-      "product2Name": "abcd",
-      "product2Description": "defg",
-      "price": 5,
-      "quantity": "60"
-    },
-    {
       "id": 3,
       "product2Name": "pc ",
       "product2Description": "laptop",

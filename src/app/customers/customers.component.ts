@@ -21,4 +21,15 @@ export class CustomersComponent implements OnInit {
         console.log(error);
       });
   }
+  deleteProduct(id){
+    this.productsService.deleteProductById(id).subscribe((response)=>{
+      this.ngOnInit();
+      
+    },(error)=>{
+console.log(error);
+
+    });
+
+
+  }
 }

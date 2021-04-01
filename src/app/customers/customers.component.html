@@ -16,17 +16,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products; let i=index">
-            <th scope="row">{{ i+1 }}</th>
+          <tr *ngFor="let product of products">
+            <th scope="row">{{ product.id }}</th>
             <td>{{ product.product2Name}}</td>
             <td>{{ product.product2Description}}</td>
             <td>{{ product.price}}</td>
             <td>{{ product.quantity}}</td>
   
             <td>
-              <button class="btn btn-info" (click)="UpdateCrud(i)"> <i class="fas fa-pen"></i>
+              <button class="btn btn-info" [routerLink]="['/customers/update', product.id]"> <i class="fas fa-pen"></i>
                 Update</button>
-              <button class="btn btn-danger ml-1" (click)="deleteUpdatedCustomer(i)"> <i class="far fa-trash-alt"></i>
+              <button class="btn btn-danger ml-1" (click)="deleteProduct(product.id)"> <i class="far fa-trash-alt"></i>
                 Delete</button>
             </td>
           </tr>
