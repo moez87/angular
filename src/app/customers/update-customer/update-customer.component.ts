@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-update-customer',
@@ -8,6 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateCustomerComponent implements OnInit {
 
+  id: any;
   submitted = false;
   product2Form: FormGroup = new FormGroup({
     id: new FormControl(''),
@@ -17,9 +21,18 @@ export class UpdateCustomerComponent implements OnInit {
     quantity: new FormControl('', [Validators.required]),
   });
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.productsService.getPProductById(this.id).subscribe((response) => {
+      this.product2Form.patchValue(response);
+
+
+    },
+      (error) => {
+        console.log(error);
+      });
   }
   UpdateProduct() {
 
@@ -27,5 +40,13 @@ export class UpdateCustomerComponent implements OnInit {
       return;
 
     }
+
+    this.productsService.updateProductById(this.id, this.product2Form.value).subscribe((response) => {
+      this.router.navigateByUrl("/customers");
+    },
+      (error) => {
+        console.log(error);
+      });
   }
 }
+

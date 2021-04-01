@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 3,
-      "product2Name": "pc ",
-      "product2Description": "laptop",
-      "price": 180,
-      "quantity": "80"
+      "product2Name": "pccc",
+      "product2Description": "asus",
+      "price": 3550,
+      "quantity": "100"
     }
   ],
   "users": []
